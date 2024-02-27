@@ -1,5 +1,5 @@
 import org.example.Calculadora;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,25 +20,25 @@ public class CalculadoraTest {
     @Test
     void somar(){
         int resul = calculadora.somar(a,b);
-        Assertions.assertEquals(a+b, resul);
+        assertEquals(a+b, resul);
     }
 
     @Test
     void subtrair(){
         int resul = calculadora.subtrair(a,b);
-        Assertions.assertEquals(a-b, resul);
+        assertEquals(a-b, resul);
     }
 
     @Test
     void multiplicar(){
         int resul = calculadora.multiplicar(a,b);
-        Assertions.assertEquals(a*b, resul);
+        assertEquals(a*b, resul);
     }
 
     @Test
     void dividir(){
         int resul = calculadora.dividir(a,b);
-        Assertions.assertEquals(a/b, resul);
+        assertEquals(a/b, resul);
     }
 
     @Test
@@ -46,13 +46,13 @@ public class CalculadoraTest {
         try {
             var result = calculadora.dividir(0,0);
         }catch (Exception e){
-            Assertions.assertEquals(ArithmeticException.class, e.getClass() );
+            assertEquals(ArithmeticException.class, e.getClass() );
         }
     }
 
     @Test
     void testExceptionLambda(){
-        Assertions.assertThrows(ArithmeticException.class, () ->{
+        assertThrows(ArithmeticException.class, () ->{
             var result = calculadora.dividir(0,0);
         } );
     }
