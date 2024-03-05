@@ -56,4 +56,19 @@ public class CalculadoraTest {
             var result = calculadora.dividir(0,0);
         } );
     }
+
+    @Test
+    void testMedia(){
+        var result = calculadora.media(a, b);
+        assertEquals(((a+b)/2), result);
+    }
+
+    @Test
+    void testMediaArray(){
+        float result = calculadora.mediaVariosNumeros(new int[] {2,6,8,5});
+        System.out.println(result);
+        System.out.println((float)(2+6+8+5)/4);
+
+        assertEquals((float)(2+6+8+5)/4, result);
+    }
 }
